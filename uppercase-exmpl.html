@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Uppercase/Lowercase with DOM</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200 p-8">
+
+    <textarea id="myTextarea" class="bg-transparent border border-gray-300 px-4 py-2 w-48"
+        placeholder="Type something..."></textarea>
+
+    <button id="toggleCaseBtn" class="bg-blue-500 text-white px-4 py-2 mt-4">Toggle Case</button>
+
+    <script>
+        // Get the elements by their ids
+        var myTextarea = document.getElementById('myTextarea');
+        var toggleCaseBtn = document.getElementById('toggleCaseBtn');
+
+        // Add an event listener to the button
+        toggleCaseBtn.addEventListener('click', function () {
+            // Get the current text content of the textarea
+            var currentText = myTextarea.value;
+
+            // Toggle between uppercase and lowercase
+            var newText = currentText === currentText.toUpperCase() ? currentText.toLowerCase() : currentText.toUpperCase();
+
+            // Set the updated text to the textarea
+            myTextarea.value = newText;
+        });
+    </script>
+
+</body>
+
+</html>

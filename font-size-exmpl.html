@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust Font Size with DOM</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200 p-8">
+
+    <label for="fontSizeInput">Font Size:</label>
+    <input type="number" id="fontSizeInput" class="border border-gray-300 px-2 py-1 mr-4" placeholder="Enter font size">
+
+    <br>
+
+    <textarea id="myTextarea" class="bg-transparent border border-gray-300 px-4 h-60 py-2 w-48"
+        placeholder="Type something..."></textarea>
+
+    <script>
+        // Get the elements by their ids
+        var fontSizeInput = document.getElementById('fontSizeInput');
+        var myTextarea = document.getElementById('myTextarea');
+
+        // Add an event listener to the number input
+        fontSizeInput.addEventListener('input', function () {
+            // Get the entered font size value
+            var fontSizeValue = fontSizeInput.value;
+
+            // Set the font size of the textarea
+            myTextarea.style.fontSize = fontSizeValue + 'px';
+        });
+    </script>
+
+</body>
+
+</html>
